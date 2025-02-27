@@ -18,7 +18,7 @@ public class mataKuliah {
         String kode, nama, dummy;
         int sks, jmlJam;
         
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i <arrMataKuliah.length; i++) {
             System.out.println("Masukkan Data Matakuliah Ke- " + (i + 1));
             System.out.print("Kode      : ");
             kode = sc.nextLine();
@@ -35,8 +35,8 @@ public class mataKuliah {
             arrMataKuliah[i] = new mataKuliah(kode, nama, sks, jmlJam);
         }
     }
-    public void cetakInfo(mataKuliah[] arrMataKuliah){
-        for (int i = 0; i < 3; i++) {
+    public static void cetakInfo(mataKuliah[] arrMataKuliah){
+        for (int i = 0; i < arrMataKuliah.length; i++) {
             System.out.println("Data Matakuliah Ke-"+(i+1));
             System.out.println("Kode        :"+arrMataKuliah[i].kode);
             System.out.println("Nama        :"+arrMataKuliah[i].nama);
