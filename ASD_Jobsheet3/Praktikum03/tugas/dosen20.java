@@ -3,7 +3,7 @@ package Praktikum_ASD.ALSD_Jobsheet3.Praktikum03.tugas;
 public class dosen20 {
     String kode;
     String nama;
-    Boolean jenisKelamin;
+    boolean jenisKelamin;
     int usia;
 
     public dosen20(String kode, String nama, Boolean jenisKelamin, int usia){
