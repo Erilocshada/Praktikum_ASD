@@ -1,12 +1,14 @@
-package Praktikum_ASD.ALSD_Jobsheet6;
+package Praktikum_ASD.ALSD_Jobsheet7;
 
 import java.util.Scanner;
 
 public class mahasiswaDemo20 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        mahasiswaBerprestasi list = new mahasiswaBerprestasi();
-        int jumMhs=5;
+        System.out.print("Masukkan Jumlah data yang ingin dimasukkan :");
+        int jumMhs = sc.nextInt();
+        sc.nextLine();
+        mahasiswaBerprestasi list = new mahasiswaBerprestasi(jumMhs);
 
         for (int i = 0; i < jumMhs; i++) {
             System.out.println("Masukkan Data Mahasiswa Ke -"+(i+1)+" : ");

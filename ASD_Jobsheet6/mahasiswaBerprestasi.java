@@ -1,8 +1,12 @@
-package Praktikum_ASD.ALSD_Jobsheet6;
+package Praktikum_ASD.ALSD_Jobsheet7;
 
 public class mahasiswaBerprestasi {
-    mahasiswa20 [] listMhs = new mahasiswa20[5];
+    mahasiswa20 [] listMhs;
     int idx;
+    public mahasiswaBerprestasi(int banyakMhs){
+        listMhs = new mahasiswa20[banyakMhs];
+        idx=0;
+    }
     void tambah(mahasiswa20 m){
         if (idx < listMhs.length) {
             listMhs[idx]=m;
