@@ -81,4 +81,17 @@ public class stackMahasiswa20 {
         }
         System.out.println("");
     }
+    public String konversiDesimalKeBiner(int nilai){
+        stackKonversi20 stack = new stackKonversi20();
+        while (nilai > 0) {
+            int sisa = nilai % 2;
+            stack.push(sisa);
+            nilai = nilai/2;
+        }
+        String biner = new String();
+        while (!stack.isEmpty()) {
+            biner += stack.pop();
+        }
+        return biner;
+    }
 }
