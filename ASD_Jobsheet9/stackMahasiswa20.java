@@ -50,8 +50,21 @@ public class stackMahasiswa20 {
         }
     }
     public void print(){
+        mahasiswa20[] temp = new mahasiswa20[top+1];
         for (int i = 0; i <= top; i++) {
-            System.out.println(stack[i].nama +"\t"+ stack[i].nim+"\t"+ stack[i].kelas);
+            temp[i] = stack[i];
+        }
+        for (int i = 0; i < temp.length-1; i++) {
+            for (int j = i+1; j < temp.length; j++) {
+                if (Integer.parseInt(temp[i].nim) < Integer.parseInt(temp[j].nim)) {
+                    mahasiswa20 tmp = temp[i];
+                    temp[i] = temp[j];
+                    temp[j] = tmp;
+                }
+            }           
+        }
+        for (int i = 0; i < temp.length; i++) {
+            System.out.println(temp[i].nama + "\t" + temp[i].nim +"\t"+temp[i].kelas);
         }
         System.out.println("");
     }
