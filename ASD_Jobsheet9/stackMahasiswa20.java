@@ -59,6 +59,9 @@ public class stackMahasiswa20 {
             return null;
         }
     }
+    public int jmlTugas(){
+        return top+1;
+    }
     public void print(){
         mahasiswa20[] temp = new mahasiswa20[top+1];
         for (int i = 0; i <= top; i++) {
