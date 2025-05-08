@@ -12,7 +12,8 @@ public class mahasiswaDemo {
             System.out.println("1. Mengumpulkan tugas");
             System.out.println("2. Menilai tugas");
             System.out.println("3. Melihat tugas teratas");
-            System.out.println("4. Melihat daftar tugas");
+            System.out.println("4. Melihat tugas terbawah");
+            System.out.println("5. Melihat daftar tugas");
             System.out.print("Pilih Menu :");
             pilih = sc.nextInt();
             sc.nextLine();
@@ -40,12 +41,18 @@ public class mahasiswaDemo {
                     }
                     break;
                 case 3:
-                    mahasiswa20 lihat = stack.peek();
-                    if (lihat != null) {
-                    System.out.println("Tugas Terakhir dikumpulkan oleh " + lihat.nama);
+                    mahasiswa20 lihatTop = stack.peekTOP();
+                    if (lihatTop != null) {
+                    System.out.println("Tugas Terakhir dikumpulkan oleh " + lihatTop.nama);
                     }
                     break;
                 case 4:
+                    mahasiswa20 lihatBottom = stack.peekBOTTOM();
+                    if (lihatBottom != null) {
+                        System.out.println("tugas Terakhir dikumpulkan oleh "+ lihatBottom.nama);
+                    }
+                    break;
+                case 5:
                     System.out.println("Daftar semua tugas");
                     System.out.println("Nama\t NIM \t Kelas");
                     stack.print();
@@ -54,6 +61,6 @@ public class mahasiswaDemo {
                 System.out.println("Pilihan tidak Valid");
                     break;
             }
-        } while (pilih >= 1 && pilih <= 4);
+        } while (pilih >= 1 && pilih <= 5);
     }
 }

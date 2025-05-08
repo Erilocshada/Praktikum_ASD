@@ -2,11 +2,13 @@ package ALSD_Jobsheet9;
 public class stackMahasiswa20 {
     mahasiswa20[] stack;
     int top;
+    int bottom;
     int size;
     public stackMahasiswa20(int size){
         this.size = size;
         stack = new mahasiswa20[size];
         top = -1;
+        bottom = 0;
     }
     public boolean isFull(){
         if (top == size-1) {
@@ -41,7 +43,15 @@ public class stackMahasiswa20 {
             return null;
         }
     }
-    public mahasiswa20 peek(){
+    public mahasiswa20 peekBOTTOM(){
+        if (!isEmpty()) {
+            return stack[bottom];
+        } else {
+            System.out.println("Stack Kosong! tidak ada tugas yang dikumpulkan");
+            return null;
+        }
+    }
+    public mahasiswa20 peekTOP(){
         if (!isEmpty()) {
             return stack[top];
         } else {
