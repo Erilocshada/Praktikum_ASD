@@ -14,6 +14,7 @@ public class layananAkademikSiakad {
             System.out.println("3. Lihat Mahasiswa Terdepan");
             System.out.println("4. Lihat Semua Antrian");
             System.out.println("5. Jumlah Mahasiswa dalam antrian");
+            System.out.println("6. Lihat Mahasiswa Belakang");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             pilih = sc.nextInt();
@@ -47,12 +48,15 @@ public class layananAkademikSiakad {
                 case 5:
                     antrian.getJmlAntri();
                     break;
+                case 6:
+                antrian.liatBelakang();
+                    break;
                 case 0:
                     System.out.println(" === Thanks You === ");
                 default:
                     System.out.println("Pilih menu dengan benar");
                     break;
             }
-        } while (pilih != 0 || pilih > 5);
+        } while (pilih != 0 || pilih > 6);
     }
 }
