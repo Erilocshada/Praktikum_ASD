@@ -1,18 +1,69 @@
 package ALSD_Jobsheet11;
+import java.util.Scanner;
 public class mahasiswaMain {
+    public static void menu(){
+         System.out.println("\n==== MENU ====");
+            System.out.println("1. Tambah Mahasiswa di Awal");
+            System.out.println("2. Tambah Mahasiswa di Akhir");
+            System.out.println("3. Tambah Mahasiswa Setelah Nama (insertAfter)");
+            System.out.println("4. Tambah Mahasiswa di Indeks Tertentu (insertAt)");
+            System.out.println("5. Tampilkan Data");
+            System.out.println("0. Keluar");
+    }
+    public static mahasiswa20 inputMahasiswa(Scanner sc) {
+        System.out.print("Masukkan NIM: ");
+        String nim = sc.nextLine();
+        System.out.print("Masukkan Nama: ");
+        String nama = sc.nextLine();
+        System.out.print("Masukkan Kelas: ");
+        String kelas = sc.nextLine();
+        System.out.print("Masukkan IPK: ");
+        double ipk = sc.nextDouble();
+        sc.nextLine();
+        mahasiswa20 mhs = new mahasiswa20(nim, nama, kelas, ipk);
+        return mhs;
+    }
     public static void main(String[] args) {
-        mahasiswa20 mhs1 = new mahasiswa20("123","Dirga","1E",3.2);
-        mahasiswa20 mhs2 = new mahasiswa20("345","Alvaro","1E",3.2);
-        mahasiswa20 mhs3 = new mahasiswa20("678","Cintia","1E",3.2);
-        mahasiswa20 mhs4 = new mahasiswa20("910","Bimon","1E",3.2);
+        Scanner sc = new Scanner(System.in);
         nodeMahasiswa20 sll = new nodeMahasiswa20(null, null);
-        sll.print();
-        sll.addFirst(mhs4);
-        sll.print();
-        sll.addLast(mhs1);
-        sll.print();
-        sll.insertAfter("Dirga", mhs3);
-        sll.insertAt(2, mhs2);
-        sll.print();
+        int pilih;
+        do { 
+            menu();
+            System.out.print("Pilih Menu\t: ");
+            pilih = sc.nextInt();
+            sc.nextLine();
+            switch (pilih) {
+                case 1:
+                    mahasiswa20 mhsAwal = inputMahasiswa(sc);
+                    sll.addFirst(mhsAwal);
+                    break;
+                case 2:
+                    mahasiswa20 mhsAkhir = inputMahasiswa(sc);
+                    sll.addLast(mhsAkhir);
+                    break;
+                case 3:
+                    System.out.print("Masukkan nama setelah siapa ingin ditambahkan: ");
+                    String keyNama = sc.nextLine();
+                    mahasiswa20 mhsInsertAfter = inputMahasiswa(sc);
+                    sll.insertAfter(keyNama, mhsInsertAfter);
+                    break;
+                case 4:
+                    System.out.print("Masukkan indeks: ");
+                    int index = sc.nextInt();
+                    sc.nextLine();
+                    mahasiswa20 mhsInsertAt = inputMahasiswa(sc);
+                    sll.insertAt(index, mhsInsertAt);
+                    break;
+                case 5:
+                    sll.print();
+                    break;
+            
+                default:
+                    System.out.println("Pilih Menu dengan benar !");
+                    break;
+            }
+            
+        } while (pilih !=0);
+        
     }
 }
