@@ -1,16 +1,17 @@
-package ALSD_Jobsheet11;
-public class mahasiswa20 {
-    String nim, nama, kelas;
-    double ipk;
-    public mahasiswa20(){}
+package Tugas;
 
-    public mahasiswa20(String nim, String nama, String kelas, double ipk) {
-        this.nim = nim;
+public class mahasiswa20 {
+    String nama;
+    String nim;
+    String kelas;
+    double ipk;
+    public mahasiswa20(String nama, String nim,String kelas,double ipk){
         this.nama = nama;
+        this.nim = nim;
         this.kelas = kelas;
-        this.ipk= ipk;
+        this.ipk = ipk;
     }
     public void tampildata(){
-        System.out.println(nim+" | "+nama+" | "+kelas+" | "+ipk +" | ");
+        System.out.println(nama+"\t"+nim+"\t"+kelas+"\t"+ipk+"\t");
     }
 }
