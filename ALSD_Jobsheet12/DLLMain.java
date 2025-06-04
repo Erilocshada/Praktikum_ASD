@@ -1,0 +1,75 @@
+package ALSD_Jobsheet12;
+import java.util.Scanner;
+
+public class DLLMain {
+    public static void main(String[] args) {
+        doubleLinkedList list = new doubleLinkedList();
+        Scanner sc = new Scanner(System.in);
+        int pilihan;
+        do {
+            System.out.println("\n Menu DLL Mahasiswa");
+            System.out.println("1. Tambah data");
+            System.out.println("2. Tambah diAkhir");
+            System.out.println("3. Hapus diawal");
+            System.out.println("4. Hapus diAkhir");
+            System.out.println("5. Tampilkan data");
+            System.out.println("6. Cari Mahasiswa Berdasarkan NIM");
+            System.out.println("7. Tambah data setelah data");
+            System.out.println("0. Keluar");
+            System.out.print("Pilih Menu : ");
+            pilihan = sc.nextInt();
+            sc.nextLine();
+            switch (pilihan) {
+                case 1:
+                    Mahasiswa20 mhs = inputMahasiswa(sc);
+                    list.addFirst(mhs);
+                    break;
+                case 2:
+                    mhs = inputMahasiswa(sc);
+                    list.addLast(mhs);
+                    break;
+                case 3:
+                    list.removeFirst();
+                    System.out.println("Data awal sudah dihapus!");
+                    break;
+                case 4:
+                    list.removeLast();
+                    System.out.println("Data akhir sudah dihapus!");
+                    break;
+                case 5:
+                    list.print();
+                    break;
+                case 6:
+                    System.out.print("Masukkan NIM yang dicari : ");
+                    String nim = sc.nextLine();
+                    node20 found = list.search(nim);
+                    break;
+                case 7:
+                    System.out.print("Masukkan nim setelah siapa ingin ditambahkan: ");
+                    String keyNIM = sc.nextLine();
+                    Mahasiswa20 mhsInsertAfter = inputMahasiswa(sc);
+                    list.insertAfter(keyNIM, mhsInsertAfter);
+                    break;
+                case 0:
+                    System.out.println("Keluar dari Program.");
+                    break;
+                default:
+                    System.out.println("Pilihan tidak valid!");
+                    break;
+            }
+        } while ( pilihan != 0);
+    }
+    public static Mahasiswa20 inputMahasiswa(Scanner sc){
+        System.out.print("Masukkan NIM   : ");
+        String nim = sc.nextLine();
+        System.out.print("Masukkan Nama  : ");
+        String nama = sc.nextLine();
+        System.out.print("Masukkan Kelas : ");
+        String kelas = sc.nextLine();
+        System.out.print("Masukkan IPK   : ");
+        double ipk = sc.nextDouble();
+        sc.nextLine();
+
+        return new Mahasiswa20(nim, nama, kelas, ipk);
+    }
+}
