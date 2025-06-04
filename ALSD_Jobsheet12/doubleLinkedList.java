@@ -49,24 +49,30 @@ public class doubleLinkedList {
             System.out.println("List kosong, tidak bisa dihapus");
             return;
         }
+        Mahasiswa20 dataDel = head.data;
         if (head == tail) {
             head = tail = null;
         } else {
             head = head.next;
             head.prev = null;
         }
+        System.out.println("Data Sudah dihapus! data yang terhapus : ");
+        dataDel.tampil();
     }
     public void removeLast(){
         if (isEmpty()) {
             System.out.println("List kosong, tidak bisa dihapus");
             return;
         }
+        Mahasiswa20 dataDel = tail.data;
         if (head == tail) {
             head = tail = null;
         } else {
             tail = tail.prev;
             tail.next = null;
         }
+        System.out.println("Data Sudah dihapus! data yang terhapus : ");
+        dataDel.tampil();
     }
     public void insertAfter(String keyNim, Mahasiswa20 data){
         node20 current = head;

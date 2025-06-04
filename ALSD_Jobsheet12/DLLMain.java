@@ -30,19 +30,17 @@ public class DLLMain {
                     break;
                 case 3:
                     list.removeFirst();
-                    System.out.println("Data awal sudah dihapus!");
                     break;
                 case 4:
-                    list.removeLast();
-                    System.out.println("Data akhir sudah dihapus!");
+                    list.removeLast();                   
                     break;
                 case 5:
                     list.print();
                     break;
                 case 6:
                     System.out.print("Masukkan NIM yang dicari : ");
-                    String nim = sc.nextLine();
-                    node20 found = list.search(nim);
+                    String Carinim = sc.nextLine();
+                    node20 found = list.search(Carinim);
                     break;
                 case 7:
                     System.out.print("Masukkan nim setelah siapa ingin ditambahkan: ");
